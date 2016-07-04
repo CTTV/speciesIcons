@@ -1,1 +1,1 @@
-module.exports = spinner = require("./src/species.js");
+module.exports = speciesIcons = require("./src/speciesIcons.js");

@@ -55,7 +55,7 @@ gulp.task('watch', function() {
 
 // will remove everything in build
 gulp.task('clean', function() {
-  return gulp.del([buildDir]);
+  return del([buildDir]);
 });
 
 // just makes sure that the build dir exists

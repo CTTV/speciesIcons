@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="../../build/cttv.speciesIcons.js"></script>
+    </style>
+  </head>
+  <body>
+    <div id="human"></div>
+    <script>
+
+    var icon = speciesIcons()
+        .species("human")
+        .size(30);
+    var svg = d3.select("#human")
+        .append("svg")
+        .attr("width", 300)
+        .attr("height", 300);
+    icon(svg.node());
+    </script>
+  </body>
+</html>

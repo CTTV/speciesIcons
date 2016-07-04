@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="tnt.tree.js"></script>
+    <script src="../../build/cttv.speciesIcons.js"></script>
+    </style>
+  </head>
+  <body>
+    <div id="human"></div>
+    <div id="tree"></div>
+    <script>
+
+    var icon = speciesIcons()
+        .species("human")
+        .size(30);
+
+
+    // The svg label allows to specify any svg element to go in the label
+    var species_label = tnt.tree.label.svg()
+        .width(function () {
+            return 30;
+        })
+        .height(function () {
+            return 35;
+        })
+        .element(function () {
+            var g = document.createElementNS("http://www.w3.org/2000/svg", "g");
+            icon(g);
+            return d3.select(g);
+        });
+
+    var newick = "((chimp, human), mouse);";
+    var tree = tnt.tree()
+        .data(tnt.tree.parse_newick(newick))
+        .layout(tnt.tree.layout.vertical().width(300).scale(false))
+        .label(species_label);
+    tree(document.getElementById("tree"));
+
+    </script>
+  </body>
+</html>
