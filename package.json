@@ -1,6 +1,6 @@
 {
   "name": "cttv.speciesIcons",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "CTTV icons for species in SVG format",
   "main": "index.js",
   "directories": {
